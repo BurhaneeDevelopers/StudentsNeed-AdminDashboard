@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile App Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <div class="">
+      <div class="fixed top-0 h-screen left-0 w-1/5 bg-gray-800 p-5 shadow-2xl">
+        <div class="">
+          <h1 class="text-white text-3xl font-bold">Admin Dashboard</h1>
+          <h2 class="text-white">Log Out</h2>
+        </div>
+        <ul class="mt-10">
+          <li class="my-2">
+            <a href="#stats" class="text-white font-medium text-xl">Stats</a>
+          </li>
+          <li class="my-2">
+            <a href="#gsScreen" class="text-white font-medium text-xl"
+              >G.S Screen</a
+            >
+          </li>
+          <li class="my-2">
+            <a href="#researchScreen" class="text-white font-medium text-xl"
+              >Research Screen</a
+            >
+          </li>
+          <li class="my-2">
+            <a href="#quizScreen" class="text-white font-medium text-xl"
+              >Quiz Screen</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ml-[20%] p-2 space-y-5">
+      <div id="stats" class="bg-gray-100 py-10 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <!-- Number of Members -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h2 class="text-lg font-medium text-gray-800">
+                Number of Members
+              </h2>
+              <p class="text-3xl font-bold text-blue-500 mt-4 drop-shadow-lg">
+                2,500
+              </p>
+            </div>
+
+            <!-- Number of Clubs -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h2 class="text-lg font-medium text-gray-800">Number of Clubs</h2>
+              <p class="text-3xl font-bold text-blue-500 mt-4 drop-shadow-lg">
+                350
+              </p>
+            </div>
+
+            <!-- Today's Users -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h2 class="text-lg font-medium text-gray-800">Today's Users</h2>
+              <p class="text-3xl font-bold text-blue-500 mt-4 drop-shadow-lg">
+                125
+              </p>
+            </div>
+
+            <!-- People Joined This Month and This Year -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h2 class="text-lg font-medium text-gray-800">People Joined</h2>
+              <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>
+                  <h3 class="text-base font-medium text-gray-600">
+                    This Month
+                  </h3>
+                  <p class="text-xl font-bold text-gray-700 drop-shadow-lg">
+                    350
+                  </p>
+                </div>
+                <div>
+                  <h3 class="text-base font-medium text-gray-600">This Year</h3>
+                  <p class="text-xl font-bold text-gray-700 drop-shadow-lg">
+                    2,500
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- People Joined This Week -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+              <h2 class="text-lg font-medium text-gray-800">
+                People Joined This Week
+              </h2>
+              <p class="text-3xl font-bold text-blue-500 mt-4 drop-shadow-lg">
+                75
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- G.S Screen -->
+      <div id="gsScreen" class="bg-indigo-500 rounded-xl shadow-lg">
+        <h1 class="text-white text-4xl font-bold p-4">G.S Screen</h1>
+        <div class="container mx-auto p-8">
+          <div>
+            <div class="">
+              <label for="image" class="text-white font-bold block mb-2"
+                >Image:</label
+              >
+              <div class="relative">
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+                  onchange="previewImage(event)"
+                />
+                <div class="py-10">
+                  <img
+                    id="imagePreview"
+                    class="h-32"
+                    src="#"
+                    alt="Image Preview"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="video" class="text-white font-bold block mb-2"
+                >Video:</label
+              >
+              <div class="relative">
+                <input
+                  type="file"
+                  id="video"
+                  name="video"
+                  class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+                  onchange="previewVideo(event)"
+                />
+                <div class="py-10">
+                  <video id="videoPreview" class="h-32" controls></video>
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="heading" class="text-white font-bold block mb-2"
+                >Heading:</label
+              >
+              <input
+                type="text"
+                id="heading"
+                name="heading"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="text" class="text-white font-bold block mb-2"
+                >Description/Content:</label
+              >
+              <textarea
+                id="text"
+                name="text"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              ></textarea>
+            </div>
+            <div class="mb-6">
+              <label for="tags" class="text-white font-bold block mb-2"
+                >Tags:</label
+              >
+              <div id="tagsContainer" class="space-y-5 flex flex-col">
+                <input
+                  type="text"
+                  id="tags"
+                  name="tags"
+                  class="rounded py-2 px-3 w-32 shadow-xl"
+                />
+                <button
+                  onclick="addTagInput()"
+                  class="bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-2 shadow-lg w-32"
+                >
+                  Add Tag
+                </button>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="bg-white text-blue-500 font-bold py-2 px-4 rounded shadow-xl"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Research Screen -->
+      <div id="researchScreen" class="bg-gray-100 rounded-xl shadow-lg">
+        <h1 class="text-gray-900 text-4xl font-bold p-4">Research Screen</h1>
+        <div class="container mx-auto p-8">
+          <div>
+            <div class="">
+              <label for="image" class="text-gray-800 font-bold block mb-2"
+                >Image:</label
+              >
+              <div class="relative">
+                <input
+                  type="file"
+                  id="image"
+                  name="image"
+                  class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+                  onchange="previewImage(event)"
+                />
+                <div class="py-10">
+                  <img
+                    id="imagePreview"
+                    class="h-32"
+                    src="#"
+                    alt="Image Preview"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="video" class="text-gray-800 font-bold block mb-2"
+                >Video:</label
+              >
+              <div class="relative">
+                <input
+                  type="file"
+                  id="video"
+                  name="video"
+                  class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+                  onchange="previewVideo(event)"
+                />
+                <div class="py-10">
+                  <video id="videoPreview" class="h-32" controls></video>
+                </div>
+              </div>
+            </div>
+            <div class="mb-6">
+              <label for="text" class="text-gray-800 font-bold block mb-2"
+                >Text:</label
+              >
+              <textarea
+                id="text"
+                name="text"
+                class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+              ></textarea>
+            </div>
+            <div class="mb-6">
+              <label for="heading" class="text-gray-800 font-bold block mb-2"
+                >Heading:</label
+              >
+              <input
+                type="text"
+                id="heading"
+                name="heading"
+                class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="tags" class="text-gray-800 font-bold block mb-2"
+                >Tags:</label
+              >
+              <input
+                type="text"
+                id="tags"
+                name="tags"
+                class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-white text-gray-800 font-bold py-2 px-4 rounded shadow-xl"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div id="quizScreen" class="bg-indigo-500 rounded-xl shadow-lg">
+        <h1 class="text-white text-4xl font-bold p-4">Quiz Screen</h1>
+        <div class="container mx-auto p-8">
+          <div>
+            <div class="mb-6">
+              <label for="question" class="text-white font-bold block mb-2"
+                >Question:</label
+              >
+              <input
+                type="text"
+                id="question"
+                name="question"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="option1" class="text-white font-bold block mb-2"
+                >Option 1:</label
+              >
+              <input
+                type="text"
+                id="option1"
+                name="option1"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="option2" class="text-white font-bold block mb-2"
+                >Option 2:</label
+              >
+              <input
+                type="text"
+                id="option2"
+                name="option2"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="option3" class="text-white font-bold block mb-2"
+                >Option 3:</label
+              >
+              <input
+                type="text"
+                id="option3"
+                name="option3"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="option4" class="text-white font-bold block mb-2"
+                >Option 4:</label
+              >
+              <input
+                type="text"
+                id="option4"
+                name="option4"
+                class="rounded py-2 px-3 w-full shadow-xl"
+              />
+            </div>
+            <button
+              type="submit"
+              class="bg-white text-blue-500 font-bold py-2 px-4 rounded shadow-xl"
+            >
+              Publish
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script to handle smooth scrolling -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+    <script>
+      function previewImage(event) {
+        const imagePreview = document.getElementById("imagePreview");
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function () {
+          imagePreview.src = reader.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        } else {
+          imagePreview.src = "#";
+        }
+      }
+    </script>
+    <script>
+      function previewVideo(event) {
+        const videoPreview = document.getElementById("videoPreview");
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function () {
+          videoPreview.src = reader.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        } else {
+          videoPreview.src = "";
+        }
+      }
+    </script>
+
+    <script>
+      const div = document.getElementsByTagName("div");
+
+      const divFill = (e) => {
+        e.preventDefault();
+      };
+    </script>
+
+    <script>
+      function addTagInput() {
+        const tagsContainer = document.getElementById("tagsContainer");
+        const newTagInput = document.createElement("input");
+        newTagInput.type = "text";
+        newTagInput.name = "tags";
+        newTagInput.className = "rounded py-2 px-3 w-32 shadow-xl";
+        tagsContainer.insertBefore(
+          newTagInput,
+          document.getElementById("tags")
+        );
+      }
+    </script>
+  </body>
+</html>
