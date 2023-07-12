@@ -120,7 +120,7 @@
                 />
                 <div class="py-10">
                   <img
-                    id="imagePreview"
+                    id="GsImagePreview"
                     class="h-32"
                     src="#"
                     alt="Image Preview"
@@ -128,7 +128,7 @@
                 </div>
               </div>
             </div>
-            <div class="mb-6">
+            <div class="">
               <label for="video" class="text-white font-bold block mb-2"
                 >Video:</label
               >
@@ -138,21 +138,22 @@
                   id="video"
                   name="video"
                   class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
-                  onchange="previewVideo(event)"
+                  onchange="previewGsVideo(event)"
                 />
                 <div class="py-10">
-                  <video id="videoPreview" class="h-32" controls></video>
+                  <video id="GsVideoPreview" class="h-32" controls></video>
                 </div>
               </div>
             </div>
             <div class="mb-6">
               <label for="heading" class="text-white font-bold block mb-2"
-                >Heading:</label
+                >Title:</label
               >
               <input
                 type="text"
                 id="heading"
                 name="heading"
+                placeholder="Enter title for your Content"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
@@ -170,15 +171,16 @@
               <label for="tags" class="text-white font-bold block mb-2"
                 >Tags:</label
               >
-              <div id="tagsContainer" class="space-y-5 flex flex-col">
+              <div id="gsTagsContainer" class="space-y-5 flex flex-col">
                 <input
                   type="text"
-                  id="tags"
+                  id="gsTags"
                   name="tags"
+                  placeholder="Enter Tags"
                   class="rounded py-2 px-3 w-32 shadow-xl"
                 />
                 <button
-                  onclick="addTagInput()"
+                  onclick="addGsTagInput()"
                   class="bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-2 shadow-lg w-32"
                 >
                   Add Tag
@@ -207,14 +209,14 @@
               <div class="relative">
                 <input
                   type="file"
-                  id="image"
+                  id="Researchimage"
                   name="image"
                   class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
-                  onchange="previewImage(event)"
+                  onchange="previewResearchImage(event)"
                 />
                 <div class="py-10">
                   <img
-                    id="imagePreview"
+                    id="researchImagePreview"
                     class="h-32"
                     src="#"
                     alt="Image Preview"
@@ -222,26 +224,26 @@
                 </div>
               </div>
             </div>
-            <div class="mb-6">
+            <div class="">
               <label for="video" class="text-gray-800 font-bold block mb-2"
                 >Video:</label
               >
               <div class="relative">
                 <input
                   type="file"
-                  id="video"
+                  id="researchVideo"
                   name="video"
                   class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
-                  onchange="previewVideo(event)"
+                  onchange="previewResearchVideo(event)"
                 />
                 <div class="py-10">
-                  <video id="videoPreview" class="h-32" controls></video>
+                  <video id="researchVideoPreview" class="h-32" controls></video>
                 </div>
               </div>
             </div>
             <div class="mb-6">
               <label for="text" class="text-gray-800 font-bold block mb-2"
-                >Text:</label
+                >Description/Content</label
               >
               <textarea
                 id="text"
@@ -251,12 +253,13 @@
             </div>
             <div class="mb-6">
               <label for="heading" class="text-gray-800 font-bold block mb-2"
-                >Heading:</label
+                >Title:</label
               >
               <input
                 type="text"
                 id="heading"
                 name="heading"
+                placeholder="Enter title for your Content"
                 class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
               />
             </div>
@@ -264,12 +267,21 @@
               <label for="tags" class="text-gray-800 font-bold block mb-2"
                 >Tags:</label
               >
-              <input
-                type="text"
-                id="tags"
-                name="tags"
-                class="border border-gray-800 rounded py-2 px-3 w-full shadow-md"
-              />
+              <div id="researchTagsContainer" class="space-y-5 flex flex-col">
+                <input
+                  type="text"
+                  id="researchTags"
+                  name="tags"
+                  placeholder="Enter Tags"
+                  class="border border-gray-800 rounded py-2 px-3 w-32 shadow-md"
+                />
+                <button
+                  onclick="addResearchTagInput()"
+                  class="bg-indigo-700 text-white font-bold py-2 px-4 rounded mt-2 shadow-lg w-32"
+                >
+                  Add Tag
+                </button>
+              </div>
             </div>
             <button
               type="submit"
@@ -294,6 +306,7 @@
                 type="text"
                 id="question"
                 name="question"
+                placeholder="Enter Your Question"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
@@ -305,6 +318,7 @@
                 type="text"
                 id="option1"
                 name="option1"
+                placeholder="Enter Options"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
@@ -316,6 +330,7 @@
                 type="text"
                 id="option2"
                 name="option2"
+                placeholder="Enter Options"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
@@ -327,6 +342,7 @@
                 type="text"
                 id="option3"
                 name="option3"
+                placeholder="Enter Options"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
@@ -338,6 +354,7 @@
                 type="text"
                 id="option4"
                 name="option4"
+                placeholder="Enter Options"
                 class="rounded py-2 px-3 w-full shadow-xl"
               />
             </div>
